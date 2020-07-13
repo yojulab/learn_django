@@ -8,7 +8,8 @@ def home(request):
     # data = {'first': 'Sanghun', 'second': 'Oh'}
     data = request.GET.copy()         # ?first=Sanghun&second=Oh
     print(data)
-    data['result'] = cal(data['first'], data['second'])
+    # data['result'] = cal(data['first'], data['second'])
+    data['result'] = XORwithKeras(data['first'], data['second'])
     return render(request, 'hello/home.html', context=data)
 
 def form(request):
@@ -18,3 +19,10 @@ def form(request):
 def cal(first, second):
     result = int(first) * int(second)
     return result
+
+import tensorflow as tf
+def XORwithKeras(first, second):
+    new_model = tf.keras.models.load_model('hello/XORwithKeras.h5')
+    param = [int(first), int(second)]
+    result = new_model.predict([param])
+    return result    
