@@ -1,12 +1,20 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.template import Context, Template
 
 # Create your views here.
-from django.http import HttpResponse
-from django.http import JsonResponse
 def home(request):
-    name01 = request.GET['name']
-    age02 = request.GET["age"]
-    requestDict = request.GET
-    result = int(age02) + 5
-    requestDict={'result_response':result}
-    return JsonResponse(requestDict)
+    # return HttpResponse("Hello, Django!")
+    # data = {'first': 'Sanghun', 'second': 'Oh'}
+    data = request.GET.copy()         # ?first=Sanghun&second=Oh
+    print(data)
+    data['result'] = cal(data['first'], data['second'])
+    return render(request, 'hello/home.html', context=data)
+
+def form(request):
+    data = request.GET.copy() 
+    return render(request, 'hello/form.html', context=data)
+
+def cal(first, second):
+    result = int(first) * int(second)
+    return result
