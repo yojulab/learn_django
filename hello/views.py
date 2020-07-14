@@ -12,6 +12,10 @@ def home(request):
     data['result'] = XORwithKeras(data['first'], data['second'])
     return render(request, 'hello/home.html', context=data)
 
+def template(request):
+    data = request.GET.copy() 
+    return render(request, 'hello/template.html', context=data)
+
 def form(request):
     data = request.GET.copy() 
     return render(request, 'hello/form.html', context=data)
