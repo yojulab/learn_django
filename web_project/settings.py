@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'background_task',
     # custom app
     'hello',
     'dbmanage',
+    'crawling',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,7 @@ STATICFILES_DIRS = (
     # os.path.join(BASE_DIR, "static"), # Root static 
     # '/hello/static/',	# hello App static 
 )
+
+#process_tasks
+# MAX_ATTEMPTS=1
+# BACKGROUND_TASK_RUN_ASYNC = True

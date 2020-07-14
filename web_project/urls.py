@@ -20,4 +20,8 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello/", include("hello.urls")),
+    # path("crawling/", include("crawling.urls")),
 ]
+
+from crawling.crawling_tasks import task_hello
+task_hello()
