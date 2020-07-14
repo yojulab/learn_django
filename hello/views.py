@@ -14,7 +14,7 @@ def home(request):
 
 def template(request):
     data = request.GET.copy() 
-    return render(request, 'hello/template.html', context=data)
+    return render(request, 'template.html', context=data)
 
 def form(request):
     data = request.GET.copy() 
