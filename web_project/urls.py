@@ -23,5 +23,6 @@ urlpatterns = [
     # path("crawling/", include("crawling.urls")),
 ]
 
-from crawling.crawling_tasks import task_hello
+from crawling.crawling_tasks import task_hello, task_crawling_daum
 task_hello()
+task_crawling_daum()
