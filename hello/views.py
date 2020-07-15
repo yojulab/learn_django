@@ -16,6 +16,10 @@ def template(request):
     data = request.GET.copy() 
     return render(request, 'template.html', context=data)
 
+def templatefromsite(request):
+    data = request.GET.copy() 
+    return render(request, 'templatefromsite.html', context=data)    
+    
 def form(request):
     data = request.GET.copy() 
     return render(request, 'hello/form.html', context=data)
@@ -30,3 +34,4 @@ def XORwithKeras(first, second):
     param = [int(first), int(second)]
     result = new_model.predict([param])
     return result    
+
