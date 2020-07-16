@@ -1,5 +1,5 @@
-from hello import views	
+from crawling import views	
 from django.urls import path			# add
 urlpatterns = [
-    # path("", views.home, name="home"),
+    path("crawling_daum/", views.crawling_daum, name=""),
 ]

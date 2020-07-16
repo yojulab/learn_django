@@ -1,4 +1,4 @@
-from hello import views	
+from dbmanage import views	
 from django.urls import path			# add
 urlpatterns = [
     path("", views.home, name="home"),

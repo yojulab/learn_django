@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # custom app
     'hello',
     'dbmanage',
-    'crawling',
+    # 'crawling',
 ]
 
 MIDDLEWARE = [

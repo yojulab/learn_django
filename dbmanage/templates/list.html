@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <table border="1">
+    <tr>
+      <th>title</th>
+      <th>links</th>
+    </tr>
+    {% for row in rows.0 %}
+    <tr>
+      <td>{{row.title}}</td>
+      <td>{{row.link}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+
+</html>
