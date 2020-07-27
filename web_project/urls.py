@@ -24,6 +24,6 @@ urlpatterns = [
     # path("crawling/", include("crawling.urls")),
 ]
 
-from crawling.crawling_tasks import task_hello, task_crawling_daum
-task_hello()
-task_crawling_daum()
+from crawling.crawling_tasks import task_hello, task_crawling_daum		# add
+task_hello(schedule=20, repeat=60*3)
+task_crawling_daum(schedule=10, repeat=60*5)
