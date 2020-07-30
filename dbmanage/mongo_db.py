@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 # pprint library is used to make the output look more pretty
 from pprint import pprint
-client = MongoClient('mongodb://172.17.0.3:27017/')
+client = MongoClient('mongodb://172.17.0.2:27017/')
 # db=client.admin
 # serverStatusResult=db.command("serverStatus")
 # print(serverStatusResult)
