@@ -25,7 +25,7 @@ urlpatterns = [
 ]
 
 from crawling.crawling_tasks import task_hello, task_crawling_daum		# add
-task_hello(schedule=20, repeat=59*59*24)
-task_crawling_daum(schedule=10, repeat=59*59*24)
+# task_hello(schedule=20, repeat=59*59*24)
+task_crawling_daum(schedule=0, repeat=59*59*24)
 # task_hello(schedule=20, repeat=60*4)
 # task_crawling_daum(schedule=10, repeat=59*3)
