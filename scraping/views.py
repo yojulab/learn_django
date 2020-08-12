@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from crawling.crawling_tasks import task_crawling_daum
+from scraping.crawling_tasks import task_crawling_daum
 
 # Create your views here.
 def crawling_daum(request):

@@ -19,12 +19,13 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", include("hello.urls")),
     path("hello/", include("hello.urls")),
     path("dbmanage/", include("dbmanage.urls")),
-    # path("crawling/", include("crawling.urls")),
+    # path("scraping/", include("crawling.urls")),
 ]
 
-from crawling.crawling_tasks import task_hello, task_crawling_daum		# add
+from scraping.crawling_tasks import task_hello, task_crawling_daum		# add
 # task_hello(schedule=20, repeat=59*59*24)
 task_crawling_daum(schedule=0, repeat=59*59*24)
 # task_hello(schedule=20, repeat=60*4)

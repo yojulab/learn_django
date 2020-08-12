@@ -2,6 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import Context, Template
 
+def main(request):
+    data = request.GET.copy() 
+    return render(request, 'main.html', context=data)
+
 # Create your views here.
 def home(request):
     # return HttpResponse("Hello, Django!")
@@ -9,7 +13,7 @@ def home(request):
     data = request.GET.copy()         # ?first=Sanghun&second=Oh
     print(data)
     # data['result'] = cal(data['first'], data['second'])
-    data['result'] = XORwithKeras(data['first'], data['second'])
+    # data['result'] = XORwithKeras(data['first'], data['second'])
     return render(request, 'hello/home.html', context=data)
 
 def template(request):
