@@ -57,7 +57,7 @@ for i in range(len(trs)-1):     # without final project
     # print(meeting[1].text)
     data = {'meetdate': els[1].text,
             'content': els[3].text, 'detail': els[5].text, 'charter_objectid':charters_infor}
-    meeting_infor = mydb.meeting.insert(data)
+    meeting_infor = mydb.meetings.insert(data)
     driver.back()   # evaluate main page
 
     # evaluate list page
