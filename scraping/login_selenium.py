@@ -20,3 +20,4 @@ driver.implicitly_wait(5)
 
 # home
 print(driver.page_source)
+driver.quit()

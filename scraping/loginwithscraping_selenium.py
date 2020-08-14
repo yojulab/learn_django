@@ -143,4 +143,5 @@ for i in range(len(trs)-1):     # without final project
     print('charter End!')
 
 client.close()
+driver.quit()
 print('The End!')
