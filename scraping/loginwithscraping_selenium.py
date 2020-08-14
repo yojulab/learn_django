@@ -14,8 +14,8 @@ driver = webdriver.Chrome(path, chrome_options=chrome_options)
 # login
 driver.get('http://sdacademy.maniaro.com/teacher/index.php')
 driver.implicitly_wait(5)
-username = 'otter35'
-userpw = '!otter35'
+username = 'my_id'
+userpw = 'my_password'
 driver.find_element_by_name('strUid').send_keys(username)
 driver.find_element_by_name('strPassword').send_keys(userpw)
 driver.find_element_by_xpath("//input[@type='submit']").click()

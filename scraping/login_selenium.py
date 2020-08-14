@@ -13,8 +13,8 @@ driver.get('http://sdacademy.maniaro.com/teacher/index.php')
 driver.implicitly_wait(5)
 username = 'my_id'
 userpw = 'my_password'
-driver.find_element_by_name('strUid').clear().send_keys(username)
-driver.find_element_by_name('strPassword').clear().send_keys(userpw)
+driver.find_element_by_name('strUid').send_keys(username)
+driver.find_element_by_name('strPassword').send_keys(userpw)
 driver.find_element_by_xpath("//input[@type='submit']").click()
 driver.implicitly_wait(5)
 
