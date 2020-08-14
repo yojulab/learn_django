@@ -10,7 +10,10 @@ def main(request):
 def home(request):
     # return HttpResponse("Hello, Django!")
     # data = {'first': 'Sanghun', 'second': 'Oh'}
-    data = request.GET.copy()         # ?first=Sanghun&second=Oh
+    # data = request.GET.copy()         # ?first=Sanghun&second=Oh
+    data = dict()
+    data['first'] = request.GET['first']
+    data['second'] = request.GET['second']
     print(data)
     # data['result'] = cal(data['first'], data['second'])
     # data['result'] = XORwithKeras(data['first'], data['second'])
