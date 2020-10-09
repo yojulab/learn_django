@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from home import views as homeview
+from hello import views	as helloview
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', homeview.home, name='home'),
-    path('home', homeview.home),
+    path("hello", helloview.hello, name="hello_home"),
+    path('', helloview.home, name='home'),
+    path('home', helloview.home),
+    path("hello/responsewithhtml/", helloview.responsewithhtml),
+    path("hello/form/", helloview.form, name="helloform"),		# add
+    path("hello/requestwithservice/", helloview.requestwithservice),
+    path("hello/template/", helloview.template, name="template"),				# add
 ]
