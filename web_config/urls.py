@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from hello import views	as helloview
+from board import views	as boardview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello", helloview.hello, name="hello_home"),
@@ -27,4 +28,8 @@ urlpatterns = [
     path("hello/requestwithservice/", helloview.requestwithservice),
     path("hello/template/", helloview.template, name="template"),				# add
     path("hello/responsedeeplearning/", helloview.response_deeplearning, name="responsedeeplearning"),				# add
+
+    path("board/listwithrawquery/", boardview.listwithrawquery, name="listwithrawquery"),				# add
+    path("board/listwithrawquerywithpaginator/", boardview.listwithrawquerywithpaginator, name="listwithrawquerywithpaginator"),				# add
+    path("board/listwithmongowithpaginator/", boardview.listwithmongowithpaginator, name="listwithmongowithpaginator"),				# add
 ]
