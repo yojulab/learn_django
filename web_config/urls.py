@@ -26,4 +26,5 @@ urlpatterns = [
     path("hello/form/", helloview.form, name="helloform"),		# add
     path("hello/requestwithservice/", helloview.requestwithservice),
     path("hello/template/", helloview.template, name="template"),				# add
+    path("hello/responsedeeplearning/", helloview.response_deeplearning, name="responsedeeplearning"),				# add
 ]

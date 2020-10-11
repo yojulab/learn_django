@@ -27,3 +27,16 @@ def cal(first, second):
 
 def template(request):	
    return render(request, 'hello/template.html')
+
+# http://localhost:8000/hello/responsedeeplearning/?x1=0&x2=1
+def response_deeplearning(request):
+   data = request.GET.copy()        
+   data['result'] = XORwithKeras(data['x1'], data['x2'])	# Modify
+   return render(request, 'hello/response_deeplearning.html', context=data)
+
+import tensorflow as tf
+def XORwithKeras(x1, x2):
+   new_model = tf.keras.models.load_model('datas/XORwithKeras.h5')
+   param = [int(x1), int(x2)]
+   result = new_model.predict([param])
+   return result 
