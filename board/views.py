@@ -44,6 +44,21 @@ def listwithrawquerywithpaginator(request):
 
 from pymongo import MongoClient
 from board.mongopaginator import MongoPaginator
+def listwithmongo(request):
+    data = request.GET.copy()
+    with MongoClient('mongodb://10.0.0.5:27017/')  as client:
+        mydb = client.mydb
+        result = list(mydb.economic.find({}))			# get Collection with find()
+        
+        result_page = []
+        for info in result:						# Cursor
+            # del info(_id)
+            temp = {'title':info['title'], 'link':info['link']}
+            result_page.append(temp)
+            print(type(info), info)
+        data['page_obj'] = result
+        
+    return render(request, 'board/listwithmongo.html', context=data)
 
 def listwithmongowithpaginator(request):
     data = request.GET.copy()
