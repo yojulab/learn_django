@@ -18,6 +18,7 @@ from django.urls import path
 
 from hello import views	as helloview
 from board import views	as boardview
+from maps import views	as mapsview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello", helloview.hello, name="hello_home"),
@@ -33,4 +34,6 @@ urlpatterns = [
     path("board/listwithrawquerywithpaginator/", boardview.listwithrawquerywithpaginator, name="listwithrawquerywithpaginator"),				# add
     path("board/listwithmongo/", boardview.listwithmongo, name="listwithmongo"),				# add
     path("board/listwithmongowithpaginator/", boardview.listwithmongowithpaginator, name="listwithmongowithpaginator"),				# add
+
+    path('maps/showmapwithfolium', mapsview.showmapwithfolium, name='show_map'),
 ]

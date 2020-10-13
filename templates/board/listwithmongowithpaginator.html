@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for row in page_obj %}
+            {% for row in page_obj.0 %}
             <tr>
                 <td>{{row.title}}</td>
                 <td>{{row.link}}</td>

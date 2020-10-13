@@ -46,7 +46,7 @@ from pymongo import MongoClient
 from board.mongopaginator import MongoPaginator
 def listwithmongo(request):
     data = request.GET.copy()
-    with MongoClient('mongodb://10.0.0.5:27017/')  as client:
+    with MongoClient('mongodb://127.0.0.1:27017/')  as client:
         mydb = client.mydb
         result = list(mydb.economic.find({}))			# get Collection with find()
         
@@ -62,9 +62,9 @@ def listwithmongo(request):
 
 def listwithmongowithpaginator(request):
     data = request.GET.copy()
-    with MongoClient('mongodb://192.168.0.6:27017/')  as client:
+    with MongoClient('mongodb://127.0.0.1:27017/')  as client:
         mydb = client.mydb
-        contact_list = mydb.economic.find({})			# get Collection with find()
+        contact_list = list(mydb.economic.find({}))			# get Collection with find()
         for info in contact_list:						# Cursor
             print(info)
 

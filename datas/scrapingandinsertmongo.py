@@ -18,6 +18,6 @@ if res.status_code == 200:
         data = {"title": title, "link": link, "create_date": datetime.datetime.now()}
         dates.append(data)
 
-    with MongoClient('mongodb://192.168.0.6:27017/')  as client:
+    with MongoClient('mongodb://127.0.0.1:27017/')  as client:
         mydb = client.mydb
         res = mydb.economic.insert_many(dates)
