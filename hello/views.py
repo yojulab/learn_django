@@ -3,7 +3,7 @@ from django.http import HttpResponse
 def hello(request):
     return HttpResponse("Hello, Django!")
 def home(request):
-    return HttpResponse("Hello, Django!")
+    return render(request, 'home.html')    
 
 from django.shortcuts import render		# add
 def responsewithhtml(request):
