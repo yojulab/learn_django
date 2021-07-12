@@ -21,6 +21,8 @@ from board import views	as boardview
 from maps import views	as mapsview
 from polls import views as pollsview
 from livestream import views as livestreamview
+from members import views as membersview
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello", helloview.hello, name="hello_home"),
@@ -42,4 +44,8 @@ urlpatterns = [
     path('polls/index', pollsview.index, name='polls_index'),
 
     path('livestreamview/livestreamwithcv2', livestreamview.livestreamwithcv2, name='livestreamwithcv2'),
+
+    path('members/loginform', membersview.login_form, name='membersview.login_form'),
+    path('members/login', membersview.login, name='membersview.login'),
+    path('members/logout', membersview.logout, name='membersview.logout'),
 ]
