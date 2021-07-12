@@ -19,6 +19,7 @@ from django.urls import path
 from hello import views	as helloview
 from board import views	as boardview
 from maps import views	as mapsview
+from polls import views as pollsview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello", helloview.hello, name="hello_home"),
@@ -36,4 +37,6 @@ urlpatterns = [
     path("board/listwithmongowithpaginator/", boardview.listwithmongowithpaginator, name="listwithmongowithpaginator"),				# add
 
     path('maps/showmapwithfolium', mapsview.showmapwithfolium, name='show_map'),
+
+    path('polls/index', pollsview.index, name='polls_index'),
 ]
