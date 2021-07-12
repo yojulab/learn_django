@@ -20,6 +20,7 @@ from hello import views	as helloview
 from board import views	as boardview
 from maps import views	as mapsview
 from polls import views as pollsview
+from livestream import views as livestreamview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello", helloview.hello, name="hello_home"),
@@ -39,4 +40,6 @@ urlpatterns = [
     path('maps/showmapwithfolium', mapsview.showmapwithfolium, name='show_map'),
 
     path('polls/index', pollsview.index, name='polls_index'),
+
+    path('livestreamview/livestreamwithcv2', livestreamview.livestreamwithcv2, name='livestreamwithcv2'),
 ]

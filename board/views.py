@@ -32,8 +32,8 @@ def listwithrawquerywithpaginator(request):
 
     paginator = Paginator(contact_list, 5) # Show 15 contacts per page.
 
-    page_number = request.GET.get('page')
-    page_number = page_number if page_number else 1 
+    page_number = request.GET.get('page', 1)
+    # page_number = page_number if page_number else 1 
     data['page_obj'] = paginator.get_page(page_number)
 
     page_obj=data['page_obj']
@@ -43,20 +43,15 @@ def listwithrawquerywithpaginator(request):
     return render(request, 'board/listwithrawquerywithpaginator.html', context=data)
 
 from pymongo import MongoClient
-from board.mongopaginator import MongoPaginator
 def listwithmongo(request):
     data = request.GET.copy()
-    with MongoClient('mongodb://127.0.0.1:27017/')  as client:
+    with MongoClient('mongodb://127.0.0.1:27017/') as client:
         mydb = client.mydb
-        result = list(mydb.economic.find({}))			# get Collection with find()
-        
-        result_page = []
-        for info in result:						# Cursor
-            # del info(_id)
-            temp = {'title':info['title'], 'link':info['link']}
-            result_page.append(temp)
-            print(type(info), info)
-        data['page_obj'] = result
+        contact_list = list(mydb.economic.find({}))			# get Collection with find()
+        data['page_obj'] = contact_list
+
+    # for row in data['page_obj']:
+    #     print(f"{row['title']}, {row['link']}")
         
     return render(request, 'board/listwithmongo.html', context=data)
 
@@ -68,13 +63,13 @@ def listwithmongowithpaginator(request):
         for info in contact_list:						# Cursor
             print(info)
 
-    paginator = MongoPaginator(contact_list, 5) # Show 15 contacts per page.
+    paginator = Paginator(contact_list, 10) # Show 15 contacts per page.
 
     page_number = request.GET.get('page', 1)
+    # page_number = page_number if page_number else 1 
     data['page_obj'] = paginator.get_page(page_number)
 
-    page_obj=data['page_obj']
-    for row in page_obj:
+    for row in data['page_obj']:
         print(f"{row['title']}, {row['link']}")
 
     return render(request, 'board/listwithrawquerywithpaginator.html', context=data)
