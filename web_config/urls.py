@@ -37,6 +37,7 @@ urlpatterns = [
     path("board/listwithmongowithpaginator/", boardview.listwithmongowithpaginator, name="listwithmongowithpaginator"),				# add
 
     path('maps/showmapwithfolium', mapsview.showmapwithfolium, name='show_map'),
+    path('maps/showchartwithplotly', mapsview.showchartwithplotly, name='show_plotly'),
 
     path('livestreamview/livestreamwithcv2', livestreamview.livestreamwithcv2, name='livestreamwithcv2'),
 ]

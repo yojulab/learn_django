@@ -1,0 +1,49 @@
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<div class="container">
+    <h1>plotly Chart</h1>
+    <div class="row">
+        <div class="col">
+            <div id="myPlot" style="width:100%;max-width:700px"></div>
+        </div>
+        <div class="col">
+            <div id="multiPlot" style="width:100%;max-width:700px"></div>
+        </div>
+    </div>
+</div>
+<script>
+var xArray = {{ xArray | safe}};
+var yArray = {{ yArray }};
+
+var data = [{
+  x:xArray,
+  y:yArray,
+  type:"bar"
+}];
+
+var layout = {title:"World Wide Wine Production"};
+
+Plotly.newPlot("myPlot", data, layout);
+</script>
+<script>
+var exp1 = "x";
+var exp2 = "1.5*x";
+var exp3 = "1.5*x + 7";
+// Generate values
+
+
+// Define Data
+var data = [
+  {x: {{ x1Values | safe }}, y: {{ y1Values | safe }}, mode:"lines"},
+  {x: {{ x1Values | safe }}, y: {{ y2Values | safe }}, mode:"lines"},
+  {x: {{ x1Values | safe }}, y: {{ y3Values | safe }}, mode:"lines"}
+];
+
+//Define Layout
+var layout = {title: "[y=" + exp1 + "]  [y=" + exp2 + "]  [y=" + exp3 + "]"};
+
+// Display using Plotly
+Plotly.newPlot("multiPlot", data, layout);
+</script>
