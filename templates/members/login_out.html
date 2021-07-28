@@ -1,0 +1,8 @@
+<body>
+    {% if data.user.is_authenticated %}
+    <p>login {{data.user.username}}.</p>
+    <p><a href="members/logout">logout</p>
+    {% else %}
+    <p>logout.</p>
+    {% endif %}
+</body>
