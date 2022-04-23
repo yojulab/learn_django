@@ -6,4 +6,8 @@
  + https://www.pythonanywhere.com/pricing/
  + https://www.goorm.io/
  + https://aws.amazon.com/
+ + heroku : https://www.heroku.com/pricing [refer](https://eveningdev.tistory.com/53)
+ + https://app.netlify.com/
+ + https://circleci.com/pricing/
+ + https://www.pythonanywhere.com/pricing/
 
