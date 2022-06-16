@@ -26,11 +26,11 @@ from members import views as membersview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello", helloview.hello, name="hello_home"),
-    path('', helloview.home, name='home'),
+    path('', helloview.index, name='index'),
     path('home', helloview.home),
     path("hello/responsewithhtml/", helloview.responsewithhtml),
-    path("hello/form/", helloview.form, name="helloform"),		# add
-    path("hello/requestwithservice/", helloview.requestwithservice),
+    path("hello/requestform/", helloview.requestform, name="hellorequestform"),		# add
+    path("hello/responsewithservice/", helloview.responsewithservice),
     path("hello/template/", helloview.template, name="template"),				# add
     path("hello/responsedeeplearning/", helloview.response_deeplearning, name="responsedeeplearning"),				# add
 

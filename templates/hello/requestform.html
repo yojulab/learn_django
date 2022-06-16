@@ -1,6 +1,21 @@
+<h3>request with name</h3>
 <form action="/hello/responsewithhtml" method="get">
-    <input type="text" name="first">
-    <input type="text" name="second">  
-    <input type="submit" value="Submit"><input type="reset">
- </form>
- 
+  <input type="text" name="first" />
+  <input type="text" name="second" />
+  <input type="submit" value="Submit" /><input type="reset" />
+</form>
+<hr />
+<h3>request with numbers and then calculate numbers</h3>
+<form action="/hello/responsewithservice" method="get">
+  <input type="text" name="firstvalue" />
+  <input type="text" name="secondvalue" />
+  <input type="submit" value="Submit" /><input type="reset" />
+</form>
+
+<hr />
+<h3>request with binaries and then predict result</h3>
+<form action="hello/responsedeeplearning/" method="get">
+  <input type="text" name="x1" />
+  <input type="text" name="x2" />
+  <input type="submit" value="Submit" /><input type="reset" />
+</form>

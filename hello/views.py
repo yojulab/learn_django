@@ -2,24 +2,28 @@
 from django.http import HttpResponse
 def hello(request):
     return HttpResponse("Hello, Django!")
+
+from django.shortcuts import render		# add
+def index(request):
+    return render(request, 'index.html')    
+
 def home(request):
     return render(request, 'home.html')    
 
-from django.shortcuts import render		# add
 def responsewithhtml(request):
-    # data = {'first': 'Sanghun', 'second': 'Oh'}						# add
+    data = {'first': 'Sanghun', 'second': 'Oh'}						# add
     data = dict()
     data['first'] = request.GET['first']
     data['second'] = request.GET['second']
     return render(request, 'hello/responsewithhtml.html', context=data)
 
-def form(request):							# add
+def requestform(request):							# add
     return render(request, 'hello/requestform.html')    
 
-def requestwithservice(request):
+def responsewithservice(request):
    data = request.GET.copy()        
    data['result'] = cal(data['firstvalue'], data['secondvalue'])
-   return render(request, 'hello/requestwithservice.html', context=data)
+   return render(request, 'hello/responsewithservice.html', context=data)
    
 def cal(first, second):
    result = int(first) * int(second)
