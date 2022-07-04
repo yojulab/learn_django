@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from hello import views	as helloview
+from homes import views	as homesview
 from maps import views	as mapsview
 from polls import views as pollsview
 from livestream import views as livestreamview
@@ -24,15 +25,12 @@ from members import views as membersview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("hello", helloview.hello, name="hello_home"),
-    path('', helloview.index, name='index'),
-    path('home', helloview.home),
-    path("hello/responsewithhtml/", helloview.responsewithhtml),
-    path("hello/requestform/", helloview.requestform, name="hellorequestform"),		# add
-    path("hello/responsewithservice/", helloview.responsewithservice),
-    path("hello/template/", helloview.template, name="template"),				# add
-    path("hello/responsedeeplearning/", helloview.response_deeplearning, name="responsedeeplearning"),				# add
 
+    path("hello", helloview.hello, name="hello_home"),
+    path('home', helloview.home),
+
+    path('', homesview.index, name='index'),
+    path('homes/', include('homes.urls')),
     path('boards/', include('boards.urls')),
 
     path('maps/showmapwithfolium', mapsview.showmapwithfolium, name='show_map'),

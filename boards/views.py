@@ -17,7 +17,7 @@ def listwithrawquery(request):
     for row in data['rows']:
         print(f"{row['title']}, {row['link']}")
 
-    return render(request, 'board/listwithrawquery.html', context=data)
+    return render(request, 'boards/listwithrawquery.html', context=data)
 
 from django.core.paginator import Paginator
 def listwithrawquerywithpaginator(request):
@@ -40,7 +40,7 @@ def listwithrawquerywithpaginator(request):
     for row in page_obj:
         print(f"{row['title']}, {row['link']}")
 
-    return render(request, 'board/listwithrawquerywithpaginator.html', context=data)
+    return render(request, 'boards/listwithrawquerywithpaginator.html', context=data)
 
 from pymongo import MongoClient
 def listwithmongo(request):
@@ -53,7 +53,7 @@ def listwithmongo(request):
     # for row in data['page_obj']:
     #     print(f"{row['title']}, {row['link']}")
         
-    return render(request, 'board/listwithmongo.html', context=data)
+    return render(request, 'boards/listwithmongo.html', context=data)
 
 def listwithmongowithpaginator(request):
     data = request.GET.copy()
@@ -72,4 +72,4 @@ def listwithmongowithpaginator(request):
     for row in data['page_obj']:
         print(f"{row['title']}, {row['link']}")
 
-    return render(request, 'board/listwithrawquerywithpaginator.html', context=data)
+    return render(request, 'boards/listwithrawquerywithpaginator.html', context=data)
