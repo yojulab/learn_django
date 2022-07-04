@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from hello import views	as helloview
-from board import views	as boardview
 from maps import views	as mapsview
 from polls import views as pollsview
 from livestream import views as livestreamview
@@ -34,10 +33,7 @@ urlpatterns = [
     path("hello/template/", helloview.template, name="template"),				# add
     path("hello/responsedeeplearning/", helloview.response_deeplearning, name="responsedeeplearning"),				# add
 
-    path("board/listwithrawquery/", boardview.listwithrawquery, name="listwithrawquery"),				# add
-    path("board/listwithrawquerywithpaginator/", boardview.listwithrawquerywithpaginator, name="listwithrawquerywithpaginator"),				# add
-    path("board/listwithmongo/", boardview.listwithmongo, name="listwithmongo"),				# add
-    path("board/listwithmongowithpaginator/", boardview.listwithmongowithpaginator, name="listwithmongowithpaginator"),				# add
+    path('boards/', include('boards.urls')),
 
     path('maps/showmapwithfolium', mapsview.showmapwithfolium, name='show_map'),
     path('maps/showchartwithplotly', mapsview.showchartwithplotly, name='show_plotly'),
