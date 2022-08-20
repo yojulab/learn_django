@@ -1,4 +1,5 @@
 ** setup config
++ email로 로그인 구현 : https://programmers-sosin.tistory.com/39
 ```
 install exension Django, Python, djlint
 $ python ./manage.py migrate
