@@ -1,6 +1,8 @@
 ** setup config
-+ email로 로그인 구현(allauth) : https://wikidocs.net/9942#django-allauth
-+ 이메일 인증(email verification) 처리하기 : https://moondol-ai.tistory.com/211
++ just django : https://wikidocs.net/book/4223
++ allauth 
+  + email로 로그인 구현 : https://wikidocs.net/9942#django-allauth
+  + 이메일 인증(email verification) 처리하기 : https://moondol-ai.tistory.com/211
 
 ```
 install exension Django, Python, djlint
